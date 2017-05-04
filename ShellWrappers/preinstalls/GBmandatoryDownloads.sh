@@ -12,13 +12,13 @@ git clone https://github.com/BaddMann/appleLoops
 cd /tmp/appleLoops
 echo "Downloading 2016 Loops From Cache Server"
 #Mandatory Download of GarageBand loops from Cache Server.
-cachelog=$(python appleLoops.py --package-set garageband --file garageband1016.plist --mandatory-only -c $CacheServer)
+cachelog=$(python appleLoops.py --package-set garageband --mandatory-only -c $CacheServer)
 echo $cachelog > cachedownload.log
 cat cachedownload.log | tail # For JSS Logs
 
 echo "Downloading 2016 Loops From Original Server"
 #Mandatory Download of GarageBand loops from Original Source... Just incase the above failed.
-sourcelog=$(python appleLoops.py --package-set garageband --file garageband1016.plist --mandatory-only)
+sourcelog=$(python appleLoops.py --package-set garageband --mandatory-only)
 echo $sourcelog > sourcedownload.log
 
 cat sourcedownload.log | tail # For JSS Logs
